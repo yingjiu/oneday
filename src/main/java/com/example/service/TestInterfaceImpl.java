@@ -6,9 +6,9 @@ package com.example.service;
 
 import java.util.List;
 
-import com.example.bean.User;
 import com.example.bean.UserInfo;
 import com.example.dao.UserDao;
+import com.example.dao.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,10 @@ import org.springframework.stereotype.Service;
 public class TestInterfaceImpl implements TestInterFace {
     //引入dao层接口
     @Autowired
-    UserDao userDao;
+    UserDao    userDao;
+    @Autowired
+    UserMapper userMapper;
+
     @Override public int testInterFace() {
         return 0;
     }
@@ -39,6 +42,7 @@ public class TestInterfaceImpl implements TestInterFace {
     //新增加的实现
     @Override
     public List<UserInfo> selectALL(){
-        return userDao.selectAll();
+        //return userDao.selectAll();
+        return userMapper.getAll();
     }
 }

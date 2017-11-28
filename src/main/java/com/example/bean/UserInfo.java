@@ -20,6 +20,9 @@ public class UserInfo {
     @Column(name = "password")
     private String password = "password寇鑫123";
 
+    @Column(name = "id")
+    private String id ;
+
     public String getUsername() {
         return username;
     }
@@ -39,5 +42,23 @@ public class UserInfo {
     @Override
     public String toString() {
         return "User{" + "username='" + username + '\'' + ", password='" + password + '\'' + '}';
+    }
+
+    /**
+     * Getter method for property <tt>id</tt>.
+     *
+     * @return property value of id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Setter method for property <tt>id </tt>.
+     *
+     * @param id value to be assigned to property id
+     */
+    public void setId(String id) {
+        this.id = id;
     }
 }

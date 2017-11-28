@@ -4,6 +4,7 @@
  */
 package com.example.dao.mybatis;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +23,7 @@ public class MyBatisMapperScannerConfig {
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage("com.example.dao.mybatis");
+        mapperScannerConfigurer.setBasePackage("com.example.dao.mappers");
 
         //初始化扫描器的相关配置，这里我们要创建一个Mapper的父类
         Properties properties = new Properties();
